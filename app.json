@@ -1,0 +1,36 @@
+{
+  "id": "f4b9cf9a-fefd-40da-a3f1-8d512ddf3563",
+  "name": "TecSa CMMS",
+  "publisher": "TecSA",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "efe648e0-0ce3-4a25-809c-c0122129b0cb",
+      "name": "QC_BC20",
+      "publisher": "TecSA",
+      "version": "1.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "20.0.0.0",
+  "idRanges": [
+    {
+      "from": 50000,
+      "to": 69999
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": false,
+    "allowDownloadingSource": false,
+    "includeSourceInSymbolFile": false
+  },
+  "runtime": "9.0"
+}
