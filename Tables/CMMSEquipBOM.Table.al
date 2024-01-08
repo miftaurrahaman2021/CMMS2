@@ -9,10 +9,11 @@ table 59015 "CMMS Equipment BOM"
         {
             DataClassification = ToBeClassified;
             Caption = 'Equipment No.';
-            TableRelation = "CMMS Equipment Master";    // Updated on 27-11-2023 by Patric
+            //TableRelation = "CMMS Equipment Master";    // Updated on 27-11-2023 by Patric
+            TableRelation = "CMMS Asset"; // Modified on 6-Dec-2023 by Patric - Request from TECSA
             trigger OnValidate()                        // Updated on 27-11-2023 by Patric
             Begin                                      // Updated on 27-11-2023 by Patric
-                "FA No." := "Equipment No.";        // Updated on 27-11-2023 by Patric
+                // "FA No." := "Equipment No.";        // Updated on 27-11-2023 by Patric
             End;                                    // Updated on 27-11-2023 by Patric
         }
         field(2; "FA No."; Code[20])
@@ -33,9 +34,10 @@ table 59015 "CMMS Equipment BOM"
             var
                 ItemRec: Record Item;
             Begin
-                if ItemRec.Get("Item No.") then
+                if ItemRec.Get("Item No.") then begin
                     Description := ItemRec.Description;
-                "Base UOM" := ItemRec."Base Unit of Measure";
+                    "Base UOM" := ItemRec."Base Unit of Measure";
+                end;
             End;
 
         }

@@ -4,6 +4,7 @@ table 59013 "Job Plan Header2"
     DataCaptionFields = "No.", Description;
     Caption = 'Job Plan Header';
 
+
     fields
     {
         field(1; "No."; Code[20])
@@ -30,9 +31,14 @@ table 59013 "Job Plan Header2"
 
     keys
     {
-        key(Key1; "No.", "Job Plan Status")
+        //     key(Key1; "No.", "Job Plan Status")
+        key(Key1; "No.")            // Modified by Patric on 12-Dec-2023
         {
             Clustered = true;
+        }
+        key(SK1; "Job Plan Status")
+        {
+
         }
     }
     fieldgroups
@@ -61,7 +67,7 @@ table 59013 "Job Plan Header2"
 
     trigger OnModify()
     begin
-
+        TestField(Rec."Job Plan Status", Rec."Job Plan Status"::Open);
     end;
 
     trigger OnDelete()

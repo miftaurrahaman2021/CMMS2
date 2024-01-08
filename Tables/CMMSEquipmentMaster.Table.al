@@ -10,14 +10,29 @@ table 59018 "CMMS Equipment Master"
         {
             DataClassification = ToBeClassified;
             Caption = 'Master Equip No.';
+            // Modified on 6-Dec-2023 by Patric - Request from TECSA
+            /*         trigger OnValidate()
+                     Begin
+                         if "No." <> xRec."No." then Begin
+                             CMMSSetup.Get();
+                             NoSeriesMgt.TestManual(CMMSSetup."Equipment Master No.");
+                             "No." := '';
+                         End
+                     End;
+             */
+            TableRelation = "CMMS Asset" where("Section ID" = field("Section Code"));
             trigger OnValidate()
             Begin
-                if "No." <> xRec."No." then Begin
-                    CMMSSetup.Get();
-                    NoSeriesMgt.TestManual(CMMSSetup."Equipment Master No.");
-                    "No." := '';
+                AssetEquip.Reset();
+                if AssetEquip.Get(Rec."No.") then Begin
+                    // Rec."No." := AssetEquip."Asset No.";
+                    Rec."FA No." := AssetEquip."Asset No.";
+                    Rec."Equipment Description" := AssetEquip."Asset Name - Equipment";
+                    Rec."Equipment Category" := AssetEquip."Asset Category";
+                    Rec."Sbu Code" := AssetEquip."Asset Dimension Code";
                 End
             End;
+
         }
         field(2; "FA No."; Code[20])
         {
@@ -67,17 +82,20 @@ table 59018 "CMMS Equipment Master"
         field(7; OEM; Code[30])
         {
             DataClassification = ToBeClassified;
-            Caption = 'OEM';
+            //   Caption = 'OEM';  // Modified on 6-Dec-2023 by Patric - Request from TECSA
+
         }
         field(8; "PID No."; Code[20])
         {
             DataClassification = ToBeClassified;
-            Caption = 'P&ID No.';
+            //    Caption = 'P&ID No.';   // Modified on 6-Dec-2023 by Patric - Request from TECSA
+
         }
         field(9; "Equipment Status"; Boolean)
         {
             DataClassification = ToBeClassified;
-            Caption = 'Status';
+            //   Caption = 'Status';
+            Caption = 'Active / Inactive';      // Modified on 6-Dec-2023 by Patric - Request from TECSA
         }
         field(10; "Search Description"; Text[100])
         {
@@ -166,12 +184,16 @@ table 59018 "CMMS Equipment Master"
         field(23; "Sbu Code"; Code[20])
         {
             DataClassification = ToBeClassified;
-            Caption = 'Sbu Code';
+            //  Caption = 'Sbu Code';
+            Caption = 'Equipment Cost Center';  // Modified on 6-Dec-2023 by Patric - Request from TECSA
         }
         field(24; "Sbu2 Code"; Code[20])
         {
             DataClassification = ToBeClassified;
-            Caption = 'Sbu2 Code';
+            // Caption = 'Sbu2 Code';
+            Caption = 'Consumption Posting Group'; // Modified on 6-Dec-2023 by Patric - Request from TECSA
+                                                   //    TableRelation = "G/L Account";  // Modified on 6-Dec-2023 by Patric - Request from TECSA
+            TableRelation = "Job Posting Group";  // TECSA Request Plant No is manal entry 11-Dec-2023
         }
         field(25; "Route Code"; Code[20])
         {
@@ -255,19 +277,37 @@ table 59018 "CMMS Equipment Master"
             DataClassification = ToBeClassified;
             Caption = 'Parent Equipment No.';
         }
+        field(41; "Plant Code"; Code[20])       // Modified on 6-Dec-2023 by Patric - Request from TECSA
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Plant';
+            TableRelation = Plant;
+        }
+        field(42; "Section Code"; Code[20])   // Modified on 6-Dec-2023 by Patric - Request from TECSA
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Section';
+            TableRelation = Section where("Plant ID" = field("Plant Code"));
+        }
     }
 
     keys
     {
-        key(Key1; "No.", "FA No.")
+        //   key(Key1; "Plant Code", "Section Code", "No.", "FA No.")
+        key(Key1; "No.", "FA No.", "Plant Code", "Section Code")  // Primary Key Change 11-Dec-2023
         {
             Clustered = true;
         }
+        /*     key(Key2; "Plant Code", "Section Code")  // Modified on 6-Dec-2023 by Patric - Request from TECSA
+             {
+
+             }
+             */
     }
 
     fieldgroups
     {
-        fieldgroup(DropDown; "No.", "Equipment Description", "FA No.", "FA Location Code")
+        fieldgroup(DropDown; "No.", "Equipment Description", "FA No.", "Plant Code", "Section Code", "FA Location Code")
         {
 
         }
@@ -276,21 +316,25 @@ table 59018 "CMMS Equipment Master"
     var
         NoSeriesMgt: Codeunit NoSeriesManagement;
         CMMSSetup: Record "CMMS Setup2";
+        AssetEquip: Record "CMMS Asset";
 
     trigger OnInsert()
     begin
-        if "No." = '' then Begin
-            CMMSSetup.Get();
-            CMMSSetup.TestField("Equipment Master No.");
-            "No." := NoSeriesMgt.GetNextNo(CMMSSetup."Equipment Master No.", WorkDate, true);
-        End;
-        "FA No." := "No.";                    // Updated on 27-11-2023 by Patric
+        // Modified on 6-Dec-2023 by Patric - Request from TECSA
+        /*   if "No." = '' then Begin
+               CMMSSetup.Get();
+               CMMSSetup.TestField("Equipment Master No.");
+               "No." := NoSeriesMgt.GetNextNo(CMMSSetup."Equipment Master No.", WorkDate, true);
+           End;
+       */
+        //     "FA No." := "No.";                    // Updated on 27-11-2023 by Patric
         "Equipment Status" := true;           // Updated on 27-11-2023 by Patric
     end;
 
     trigger OnModify()
     begin
-
+        "Last Date Modified" := WorkDate();
+        "Modified By" := UserId();
     end;
 
     trigger OnDelete()

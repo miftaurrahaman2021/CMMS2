@@ -18,6 +18,7 @@ page 59023 "CMMS Equipment List"
             {
 
 
+
                 field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
@@ -34,16 +35,26 @@ page 59023 "CMMS Equipment List"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Equipment Description field.';
                 }
-                field("FA Location Code"; Rec."FA Location Code")
+                field("Plant Code"; Rec."Plant Code")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the FA Location Code field.';
+                    ToolTip = 'Specifies the value of the Plant field.';
                 }
-                field("Manufacturer Code"; Rec."Manufacturer Code")
+                field("Section Code"; Rec."Section Code")
                 {
                     ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Manufacturer Code field.';
+                    ToolTip = 'Specifies the value of the Section field.';
                 }
+                /*  field("FA Location Code"; Rec."FA Location Code")
+                 {
+                     ApplicationArea = All;
+                     ToolTip = 'Specifies the value of the FA Location Code field.';
+                 }
+                 field("Manufacturer Code"; Rec."Manufacturer Code")
+                 {
+                     ApplicationArea = All;
+                     ToolTip = 'Specifies the value of the Manufacturer Code field.';
+                 } */
                 field("Model No."; Rec."Model No.")
                 {
                     ApplicationArea = All;

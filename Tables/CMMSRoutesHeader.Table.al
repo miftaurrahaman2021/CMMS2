@@ -26,6 +26,8 @@ table 59006 "CMMS Routes Header"
                 EquipmentRec.SetRange("No.", "Equipment No.");
                 if EquipmentRec.FindFirst() then begin
                     "Equipment Name" := EquipmentRec."Equipment Description";
+                    "Plant Code" := EquipmentRec."Plant Code";
+                    "Section Code" := EquipmentRec."Section Code";
                 end
 
             End;
@@ -36,12 +38,22 @@ table 59006 "CMMS Routes Header"
             Caption = 'Equipment Name';
             Editable = false;
         }
-
-
         field(5; "Route Status"; Enum "PM Status")
         {
             DataClassification = ToBeClassified;
             Caption = 'Route Status';
+        }
+        field(6; "Plant Code"; Code[20])  // Modified by Patric on 13-Dec-2023
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Plant';
+            Editable = false;
+        }
+        field(7; "Section Code"; Code[20])  // Modified by Patric on 13-Dec-2023
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Section Code';
+            Editable = false;
         }
     }
 

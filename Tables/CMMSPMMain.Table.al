@@ -23,6 +23,9 @@ table 59017 "PM Main List"
                 FARec.SetRange("No.", "FA No.");
                 if FARec.FindFirst() then begin
                     "FA Description" := FARec."Equipment Description";
+                    "Work Order Type" := 'PM';   // Modified by Patric on 12-Dec-2023
+                    "Plant Code" := FARec."Plant Code";
+                    "Section Code" := FARec."Section Code";
                 end;
 
             End;
@@ -170,6 +173,18 @@ table 59017 "PM Main List"
         field(23; "Override Next Due Date"; Date)
         {
             Caption = 'Override Next Due Date';
+        }
+        field(24; "Plant Code"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Plant Code';
+            Editable = false;
+        }
+        field(25; "Section Code"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Section Code';
+            Editable = false;
         }
 
     }

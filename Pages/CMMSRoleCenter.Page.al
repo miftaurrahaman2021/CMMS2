@@ -16,12 +16,16 @@ page 59018 "CMMS Role Center"
                 part(Part2; "CMMS Job Plan CUE")
                 {
                     ApplicationArea = All;
-                    Caption = 'Job Plan CUE';
+                    Caption = 'Job Plan';
                 }
             }
-            group(RealTime)
+            group("Work Order")
             {
-
+                part(Part3; "Work Order CUE")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Work Order Status';
+                }
             }
         }
     }
@@ -39,26 +43,54 @@ page 59018 "CMMS Role Center"
                     ApplicationArea = All;
                     RunObject = Page "CMMS Setup";
                 }
-                action("Work Order Status")
+                action("Equipment Group")
+                {
+                    Caption = 'Equipment Group';
+                    Image = Category;
+                    ApplicationArea = All;
+                    RunObject = page "CMMS Asset Category";
+                }
+                action(Plant)  // Modified on 6-Dec-2023 by Patric - Request from TECSA
+                {
+                    Caption = 'Plant';
+                    Image = FixedAssets;
+                    ApplicationArea = All;
+                    RunObject = page "Plant List";
+                }
+                action("Section")  // Modified on 6-Dec-2023 by Patric - Request from TECSA
+                {
+                    Caption = 'Section';
+                    Image = Select;
+                    ApplicationArea = All;
+                    RunObject = page "Section List";
+                }
+                action("Asset")    // Modified on 6-Dec-2023 by Patric - Request from TECSA
+                {
+                    Caption = 'Equipment Relationship';
+                    Image = FixedAssets;
+                    ApplicationArea = All;
+                    RunObject = page "CMMS Asset List";
+                }
+                action("Job Posting Group")
+                {
+                    Caption = 'Job Posting Group';
+                    Image = JobPrice;
+                    ApplicationArea = All;
+                    RunObject = page "Job Posting Groups";
+                }
+                /* action("Work Order Status")
                 {
                     Caption = 'Work Order Status';
                     Image = Order;
                     ApplicationArea = All;
                     RunObject = page "CMMS Work Order Status";
-                }
+                } */
                 action("Work Order Type")
                 {
                     Caption = 'Work Order Type';
                     Image = OrderList;
                     ApplicationArea = All;
                     RunObject = page "CMMS Work Order Type";
-                }
-                action("Equipment Master")
-                {
-                    Caption = 'Equipment Master';
-                    Image = FixedAssets;
-                    ApplicationArea = All;
-                    RunObject = Page "CMMS Equipment List";
                 }
                 action("Problem/Cause Master")
                 {
@@ -81,13 +113,28 @@ page 59018 "CMMS Role Center"
                     ApplicationArea = All;
                     RunObject = Page "Failure Class";
                 }
-                action("Resource Record")
+                action("Task Master")           // Modified on 6-Dec-2023 by Patric - Request from TECSA
                 {
-                    Caption = 'Resource Record';
-                    Image = Resource;
+                    Caption = 'Task Master';
+                    Image = TaskList;
                     ApplicationArea = All;
-                    RunObject = page "Resource Ledger Entries";
+                    RunObject = page "CMMS Task Master";
                 }
+                action("Equipment Master")
+                {
+                    Caption = 'Equipment Master';
+                    Image = FixedAssets;
+                    ApplicationArea = All;
+                    RunObject = Page "CMMS Equipment List";
+                }
+
+                /*  action("Resource Record")
+                 {
+                     Caption = 'Resource Record';
+                     Image = Resource;
+                     ApplicationArea = All;
+                     RunObject = page "Resource Ledger Entries";
+                 } */
                 action("Resource Groups")
                 {
                     Caption = 'Resource Groups';
@@ -110,7 +157,7 @@ page 59018 "CMMS Role Center"
                     RunObject = page "CMMS Routes List";
                 }
             }
-            group("Planning & Execuation")
+            group("Preventive Maintenance")
             {
                 action("PM Setup")
                 {
@@ -119,12 +166,41 @@ page 59018 "CMMS Role Center"
                     ApplicationArea = All;
                     RunObject = page "PM Main List";
                 }
-                action("Work Order")
+                action("Create PM Schedule")
                 {
-                    Caption = 'Work Order';
+                    Caption = 'Run PM Schedule';
+                    ApplicationArea = All;
+                    Image = Planning;
+                    RunObject = page "CMMS PM Generator";
+                }
+                action("PM Work Order")  // Modified by Patric on 12-Dec-2023
+                {
+                    Caption = 'PM Work Order';
                     Image = Worksheet;
                     ApplicationArea = All;
-                    RunObject = page "Work Order Selection";
+                    RunObject = page "Work Order Lists";
+                }
+
+            }
+            group("Corrective Maintenance")
+            {
+                action("Corrective Work Order")  // Modified by Patric on 12-Dec-2023
+                {
+                    ApplicationArea = All;
+                    Caption = 'Corrective Work Order';
+                    Image = Worksheet;
+                    RunObject = page "CM Work Order List";
+                }
+
+            }
+            group(Reports)
+            {
+                action("Work Order List")
+                {
+                    ApplicationArea = All;
+                    Caption = 'Work Order PM/CM';
+                    Image = OrderList;
+                    RunObject = page "Complete Work Order List";
                 }
             }
         }
@@ -137,7 +213,7 @@ page 59018 "CMMS Role Center"
                     Caption = 'Equipment Creation';
                     Image = FixedAssets;
                     ApplicationArea = All;
-                    RunObject = page "CMMS Equipment Master";
+                    RunObject = Page "CMMS Equipment List";
                 }
             }
             group(Route)

@@ -25,10 +25,12 @@ page 59032 "PM Main List"
                 field("FA No."; Rec."FA No.")
                 {
                     ToolTip = 'Specifies the value of the FA No. field.';
+                    Caption = 'Equipment No';  //TECSA Change Request on 19-Dec-2023
                 }
                 field("FA Description"; Rec."FA Description")
                 {
                     ToolTip = 'Specifies the value of the FA Description field.';
+                    Caption = 'Equipment Name';  //TECSA Change Request on 19-Dec-2023
                 }
                 field("Routes No."; Rec."Routes No.")
                 {

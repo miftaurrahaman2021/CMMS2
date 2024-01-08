@@ -95,6 +95,39 @@ table 59010 "CMMS PM Schedule"
             DataClassification = ToBeClassified;
             Caption = 'Work Order Completion Date';
         }
+        field(20; "Plant Code"; Code[20])       // Modified by Patric on 12-Dec-2023
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Plant';
+        }
+        field(21; "Section Code"; Code[20])  // Modified by Patric on 12-Dec-2023
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Section';
+        }
+        field(22; "Cost Center Code"; Code[20])  // Modified by Patric on 12-Dec-2023
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Cost Center';
+        }
+        field(23; "Posting Group"; Code[20])  // Modified by Patric on 12-Dec-2023
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Posting Group';
+            TableRelation = "Job Posting Group";  //TECSA Change Request on 19-Dec-2023
+        }
+        field(24; "Remarks 1"; Text[500])
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Description of Work Order';
+
+        }
+        field(25; "Remarks 2"; Text[500])
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Observation & Action';
+        }
+
 
         // Route Line Information 
 
@@ -211,6 +244,93 @@ table 59010 "CMMS PM Schedule"
             DataClassification = ToBeClassified;
             Caption = 'Work Order Type';
         }
+        /*   field(59; "HOD Approval"; Boolean)
+          {
+              DataClassification = ToBeClassified;
+              Caption = 'Department Head Approval';
+          }
+          field(60; "Store Department Approval"; Boolean)
+          {
+              DataClassification = ToBeClassified;
+              Caption = 'Store Department Head Approval';
+          } */
+        field(61; "HOD Approval Status"; Enum "Request Status")
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Department Head Approval Status';
+        }
+        field(62; "Store Approval Status"; Enum "Request Status")
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Store Approval Status';
+        }
+        field(63; "Failure Code"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Failure Code';
+            TableRelation = "Failure Class";
+            trigger OnValidate()
+            var
+                FailureRec: Record "Failure Class";
+            Begin
+                FailureRec.Reset();
+                if FailureRec.Get("Failure Code") then
+                    Rec."Failure Description" := FailureRec.Description;
+            End;
+        }
+        field(64; "Failure Description"; Text[100])
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Failure Description';
+            Editable = false;
+        }
+
+        //TECSA Change Request on 19-Dec-2023
+        field(66; "Solution Code"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Solution Code';
+            TableRelation = "Solution Master";
+            trigger OnValidate()
+            var
+                SolutionRec: Record "Solution Master";
+            begin
+                SolutionRec.Reset();
+                if SolutionRec.Get("Solution Code") then
+                    Rec."Solution Description" := SolutionRec."Solution Description";
+            end;
+        }
+        field(67; "Solution Description"; Text[250])
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Solutions';
+            Editable = false;
+        }
+        field(68; "Cause Code"; Code[20])  //TECSA Change Request on 21-Dec-2023
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Cause Code';
+            TableRelation = "Cause Master";
+            trigger OnValidate()
+            var
+                CuaseRec: Record "Cause Master";
+            Begin
+                CuaseRec.Reset();
+                if CuaseRec.Get("Cause Code") then
+                    Rec."Cause Description" := CuaseRec."Cause Description";
+            End;
+        }
+        field(69; "Cause Description"; Text[100])  //TECSA Change Request on 21-Dec-2023
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'Cause Description';
+            Editable = false;
+        }
+        field(101; "User ID"; Code[20])
+        {
+            DataClassification = EndUserIdentifiableInformation;
+            Caption = 'Created By';
+        }
 
     }
 
@@ -243,6 +363,7 @@ table 59010 "CMMS PM Schedule"
     trigger OnInsert()
     begin
         "Work Order Date" := WorkDate();
+        "User ID" := UserId;
     end;
 
     trigger OnModify()

@@ -22,7 +22,8 @@ table 59014 "Job Plan Line2"
         field(4; "Task No."; Code[20])
         {
             Caption = 'Task No.';
-            TableRelation = "CMMS Task Master" where("Asset Sub Class Code" = filter('EQUIPMENT'));
+            //  TableRelation = "CMMS Task Master" where("Asset Sub Class Code" = filter('EQUIPMENT'));
+            TableRelation = "CMMS Task Master"; // Changes Done by Patric on 11-Dec-2023
             trigger OnValidate()
 
             Begin
@@ -136,7 +137,7 @@ table 59014 "Job Plan Line2"
 
     trigger OnModify()
     begin
-
+        TestField("Job Plan Status", "Job Plan Status"::Open);
     end;
 
     trigger OnDelete()

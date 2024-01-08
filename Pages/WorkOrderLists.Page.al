@@ -5,6 +5,7 @@ page 50193 "Work Order Lists"
     UsageCategory = Lists;
     Editable = false;
     SourceTable = "CMMS PM Schedule";
+    SourceTableView = sorting("RL Equip. No", "PM Sch No.") where("Work Order Type" = filter(PM)); // Modified by Patric on 12-Dec-2023
     CardPageId = "CMMS Work Order Card";
 
     layout

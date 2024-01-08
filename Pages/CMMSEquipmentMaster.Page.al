@@ -12,11 +12,53 @@ page 59022 "CMMS Equipment Master"
         {
             group(Equipment)
             {
+                field("Plant Code"; Rec."Plant Code") // Modified on 6-Dec-2023 by Patric - Request from TECSA
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Plant field.';
+                }
+                field("Section Code"; Rec."Section Code") // Modified on 6-Dec-2023 by Patric - Request from TECSA
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Section field.';
+                }
+
+                /*                field(OEM; Rec.OEM)       // Modified on 6-Dec-2023 by Patric - Request from TECSA
+                                {
+                                    ApplicationArea = All;
+                                    ToolTip = 'Specifies the value of the OEM field.';
+
+                                }
+                                field("PID No."; Rec."PID No.")   // Modified on 6-Dec-2023 by Patric - Request from TECSA
+                                {
+                                    ApplicationArea = All;
+                                    ToolTip = 'Specifies the value of the P&ID No. field.';
+
+                                }
+                                */
                 field("No."; Rec."No.")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Master Equip No. field.';
-                    Visible = false;      // Updated on 27-11-2023 by Patric
+                    //       Visible = false;      // Updated on 27-11-2023 by Patric
+
+                    // Modified on 6-Dec-2023 by Patric - Request from TECSA
+
+                    /*        TableRelation = "CMMS Asset" where("Section ID" = field("Section Code"));
+                            trigger OnValidate()
+                            Begin
+                                AssetEquip.Reset();
+                                if AssetEquip.Get(Rec."No.") then Begin
+                                    Rec."No." := AssetEquip."Asset No.";
+                                    Rec."FA No." := AssetEquip."Asset No.";
+                                    Rec."Equipment Description" := AssetEquip."Asset Name - Equipment";
+                                    Rec."Equipment Category" := AssetEquip."Asset Category";
+                                    Rec."Sbu Code" := AssetEquip."Asset Dimension Code";
+                                End
+                            End;
+                            */
+
+                    // End Modified on 6-Dec-2023 by Patric - Request from TECSA
                 }
                 field("FA No."; Rec."FA No.")
                 {
@@ -44,20 +86,11 @@ page 59022 "CMMS Equipment Master"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Model No. field.';
                 }
-                field(OEM; Rec.OEM)
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the OEM field.';
-                }
-                field("PID No."; Rec."PID No.")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the P&ID No. field.';
-                }
-                field("Equipment Status"; Rec."Equipment Status")
+                field("Equipment Status"; Rec."Equipment Status")        // Modified on 6-Dec-2023 by Patric - Request from TECSA
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Status field.';
+                    Caption = 'Active / Inactive';
                 }
                 field("Search Description"; Rec."Search Description")
                 {
@@ -69,11 +102,12 @@ page 59022 "CMMS Equipment Master"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the Criticality field.';
                 }
-                field("Equipment Area"; Rec."Equipment Area")
-                {
-                    ApplicationArea = All;
-                    ToolTip = 'Specifies the value of the Area field.';
-                }
+                /*           field("Equipment Area"; Rec."Equipment Area")
+                           {
+                               ApplicationArea = All;
+                               ToolTip = 'Specifies the value of the Area field.';
+                           }
+                */           // Modified on 6-Dec-2023 by Patric - Request from TECSA
                 field("Serial No."; Rec."Serial No.")
                 {
                     ApplicationArea = All;
@@ -107,20 +141,34 @@ page 59022 "CMMS Equipment Master"
                     ApplicationArea = All;
                     Caption = 'Main Asset Component';
                 }
-                field("Manufacturer Code"; Rec."Manufacturer Code")
-                {
-                    ApplicationArea = All;
-                    Caption = 'Manufacturer Code';
-                }
+                /*    field("Manufacturer Code"; Rec."Manufacturer Code")
+                    {
+                        ApplicationArea = All;
+                        Caption = 'Manufacturer Code';
+                    }
+                */      // Modified on 6-Dec-2023 by Patric - Request from TECSA
                 field("Sbu Code"; Rec."Sbu Code")
                 {
                     ApplicationArea = All;
-                    Caption = 'Sbu Code';
+                    //    Caption = 'Sbu Code';
+                    // Modified on 6-Dec-2023 by Patric - Request from TECSA
+                    Caption = 'Equipment Cost Center';
+                    TableRelation = "Dimension Value".Code where("Global Dimension No." = const(7));
+                    trigger OnValidate()
+                    Begin
+                        DimValue.Reset();
+                        if DimValue.Get(Rec."Sbu Code") then begin
+                            Rec."Sbu Code" := DimValue.Code;
+                        end
+
+                    End;
+
                 }
                 field("Sbu2 Code"; Rec."Sbu2 Code")
                 {
                     ApplicationArea = All;
-                    Caption = 'Sbu2 Code';
+                    //    Caption = 'Sbu2 Code';
+                    Caption = 'Consumption Posting Group'; // Modified on 6-Dec-2023 by Patric - Request from TECSA
                 }
                 field("PO Number"; Rec."PO Number")
                 {
@@ -224,26 +272,39 @@ page 59022 "CMMS Equipment Master"
                     ToolTip = 'Specifies the value of the Parent Equipment No. field.';
                 }
             }
-            /*      part(EquipBOM; "Maintenance BOM Line")
-                  {
-                      ApplicationArea = All;
-                      UpdatePropagation = Both;
-                      SubPageLink = "FA No." = field("FA No.");
-                  }
-                  */
+            /*   part(EquipBOM; "Maintenance BOM Line")
+              {
+                  ApplicationArea = All;
+                  UpdatePropagation = Both;
+                  SubPageLink = "FA No." = field("FA No.");
+              }
+   */
             part(EquipmentBillOfMaterils; "CMMS Equipment BOM Subform")
             {
                 ApplicationArea = All;
+                Caption = 'Bill Of Materials';
                 UpdatePropagation = Both;
                 SubPageLink = "Equipment No." = field("No."), "FA No." = field("FA No.");
+                //   SubPageLink = "FA No." = field("FA No."), "Equipment No." = field("No.");
                 Visible = true;
+                //    Editable = false;   //TECSA Change Request on 19-Dec-2023
             }
+
             // Main Asset Components
-            part(EquipComponent; "CMMS Equipment Components List")
+            /*  part(EquipComponent; "CMMS Equipment Components List")  // Modified on 6-Dec-2023 by Patric - Request from TECSA
+             {
+                 ApplicationArea = All;
+                 UpdatePropagation = Both;
+                 SubPageLink = "FA No." = field("No.");
+             } */
+            // Modified on 6-Dec-2023 by Patric - Request from TECSA
+
+            part(WorkOrderHistory; "CMMS WorkOrder History List")   // Modified on 6-Dec-2023 by Patric - Request from TECSA
             {
                 ApplicationArea = All;
+                Caption = 'Work Order History';
                 UpdatePropagation = Both;
-                SubPageLink = "FA No." = field("No.");
+                SubPageLink = "PM Equipment No." = field("No.");
             }
         }
 
@@ -268,5 +329,9 @@ page 59022 "CMMS Equipment Master"
     }
 
     var
-        myInt: Integer;
+        Plant: Record Plant;
+        Section: Record Section;
+        GLAccount: Record "G/L Account";
+        DimValue: Record "Dimension Value";
+        AssetEquip: Record "CMMS Asset";
 }

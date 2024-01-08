@@ -18,6 +18,7 @@ page 59016 "CMMS PM Main Card"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the PM No. field.';
+                    Editable = false;  //TECSA Change Request on 19-Dec-2023
                 }
                 field(Description; Rec.Description)
                 {
@@ -28,11 +29,24 @@ page 59016 "CMMS PM Main Card"
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the FA No. field.';
+                    Caption = 'Equipment No';  //TECSA Change Request on 19-Dec-2023
                 }
                 field("FA Description"; Rec."FA Description")
                 {
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the FA Description field.';
+                    Caption = 'Equipment Name';  //TECSA Change Request on 19-Dec-2023
+                }
+                field("Plant Code"; Rec."Plant Code")  // Modified by Patric on 13-Dec-2023
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Plant Cod field.';
+                    Caption = 'Plant Code';  //TECSA Change Request on 19-Dec-2023
+                }
+                field("Section Code"; Rec."Section Code")  // Modified by Patric on 13-Dec-2023
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Section Code field.';
                 }
                 field("Routes No."; Rec."Routes No.")
                 {
@@ -197,6 +211,8 @@ page 59016 "CMMS PM Main Card"
                             PMScheduleRec."PM Description" := Rec.Description;
                             PMScheduleRec."PM Equipment No." := Rec."FA No.";
                             PMScheduleRec."PM Equip.Description" := Rec.Description;
+                            PMScheduleRec."Plant Code" := Rec."Plant Code";  // Modified by Patric on 13-Dec-2023
+                            PMScheduleRec."Section Code" := Rec."Section Code";  // Modified by Patric on 13-Dec-2023
                             PMScheduleRec."PM Routes No." := Rec."Routes No.";
                             PMScheduleRec."PM Routes Name" := Rec."Routes Description";
                             PMScheduleRec."PM Status" := Rec."PM Status";
@@ -232,7 +248,23 @@ page 59016 "CMMS PM Main Card"
     }
 
     var
+        FARec: Record "CMMS Equipment Master";  // Added on 11-Dec-2023
         PMMainRec: Record "PM Main List"; // Main PM Table
         RouteLineRec: Record "CMMS Routes Line";  // Route Line holding All the PM Related Info
         PMScheduleRec: Record "CMMS PM Schedule"; // Temp Table where data has to insert from PM Main and Route Line.
+
+    //TECSA Change Request on 19-Dec-2023
+    trigger OnNewRecord(BelowxRec: Boolean)
+    var
+        NosMgt: Codeunit NoSeriesManagement;
+        QCSetup: Record "CMMS Setup2";
+    begin
+        if Rec."No." = '' then Begin
+            QCSetup.Get();
+            QCSetup.TestField("Preventive Maintenance Nos.");
+            Rec."No." := NosMgt.GetNextNo(QCSetup."Preventive Maintenance Nos.", WorkDate(), true);
+        End
+    end;
+
+
 }

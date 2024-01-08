@@ -42,6 +42,14 @@ page 59038 "CMMS PM Generator"
                     ApplicationArea = All;
                     ToolTip = 'Specifies the value of the PM Equip.Description field.';
                 }
+                field("Plant Code"; Rec."Plant Code")
+                {
+                    ToolTip = 'Specifies the value of the Plant field.';
+                }
+                field("Section Code"; Rec."Section Code")
+                {
+                    ToolTip = 'Specifies the value of the Section field.';
+                }
                 field("PM Routes No."; Rec."PM Routes No.")
                 {
                     ApplicationArea = All;
@@ -100,7 +108,7 @@ page 59038 "CMMS PM Generator"
 
                 var
                     PSScheduler: Record "CMMS PM Schedule";
-                    CMMSSetup: Record "CMMS Setup";
+                    CMMSSetup: Record "CMMS Setup2";
                     NoSeriesMgt: Codeunit NoSeriesManagement;
                     WorkOrderNo: Code[20];
                     WONos: Code[20];

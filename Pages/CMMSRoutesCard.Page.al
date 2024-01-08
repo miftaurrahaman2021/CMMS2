@@ -32,6 +32,14 @@ page 59015 "CMMS Routes Card"
                 {
                     ToolTip = 'Specifies the value of the Equipment Name field.';
                 }
+                field("Plant Code"; Rec."Plant Code")  // Modified by Patric on 13-Dec-2023
+                {
+                    ToolTip = 'Specifies the value of the Plant field.';
+                }
+                field("Section Code"; Rec."Section Code")  // Modified by Patric on 13-Dec-2023
+                {
+                    ToolTip = 'Specifies the value of the Section Code field.';
+                }
 
                 field("Route Status"; Rec."Route Status")
                 {
