@@ -1,4 +1,4 @@
-page 50142 "CM Work Order Card"
+page 55142 "CM Work Order Card1"
 {
     Caption = 'CM Work Order Card';
     PageType = Card;
@@ -412,26 +412,7 @@ page 50142 "CM Work Order Card"
                     end;
                 }
             }
-            group(Print) //TECSA Change Request on 28-Dec-2023
-            {
-                action("Print CM Work Order")
-                {
 
-                    ApplicationArea = All;
-                    trigger OnAction()
-                    var
-                        CMWorkOrder: Record "CMMS PM Schedule";
-                        WOItemL: Record "CMMS Equipment BOM";
-                    Begin
-                        CMWorkOrder.Reset();
-                        CMWorkOrder.SetRange("PM No.", Rec."PM No.");
-                        CMWorkOrder.SetRange("Work Order No.", Rec."Work Order No.");
-                        //   Report.RunModal(Report::"CM Work Order", true, true, WOItemL);
-                        Report.RunModal(Report::"CM Work Order", true, true, CMWorkOrder); //TECSA Change Request on 24-Jan-2024
-                    End;
-
-                }
-            }
         }
     }
     trigger OnAfterGetCurrRecord()
