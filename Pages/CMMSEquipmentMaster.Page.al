@@ -4,6 +4,7 @@ page 59022 "CMMS Equipment Master"
     ApplicationArea = All;
     UsageCategory = Documents;
     SourceTable = "CMMS Equipment Master";
+    DataCaptionFields = "No.";
     Caption = 'Equipment Mastser';
 
     layout

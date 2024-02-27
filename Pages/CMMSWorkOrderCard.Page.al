@@ -130,6 +130,24 @@ page 59042 "CMMS Work Order Card"
                     Message('Work Order has been Posted & Closed..');
                 end;
             }
+            action("Print PM Work Order")  // Modified on 18-Feb-2024 by Patric - Request from TECSA
+            {
+                ApplicationArea = All;
+                trigger OnAction()
+                var
+                    PMWorkOrder: Record "CMMS PM Schedule";
+                    WOItemL: Record "CMMS Equipment BOM";
+                    PMRoute: Record "CMMS Routes Line";
+
+                Begin
+                    PMWorkOrder.Reset();
+                    PMWorkOrder.SetRange("PM No.", Rec."PM No.");
+                    PMWorkOrder.SetRange("Work Order No.", Rec."Work Order No.");
+                    Report.RunModal(Report::"CM PM Work Order", true, true, PMWorkOrder);
+                End;
+            }
+
+
         }
     }
     trigger OnAfterGetCurrRecord()

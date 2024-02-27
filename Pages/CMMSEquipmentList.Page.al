@@ -6,7 +6,7 @@ page 59023 "CMMS Equipment List"
     SourceTable = "CMMS Equipment Master";
     UsageCategory = Lists;
     CardPageId = "CMMS Equipment Master";
-    SourceTableView = sorting("No.", "FA No.") where("Equipment Status" = filter(true));
+    //   SourceTableView = sorting("No.", "FA No.") where("Equipment Status" = filter(true)); // Modified on 17-Feb-2024 by Patric - Request from TECSA
     DeleteAllowed = false;
     Editable = false;
 

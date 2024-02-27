@@ -614,7 +614,7 @@
       <Width>20.16125cm</Width>
       <Page>
         <PageHeader>
-          <Height>15.35779cm</Height>
+          <Height>14.08779cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -655,6 +655,105 @@
             </Textbox>
             <Rectangle Name="Rectangle1">
               <ReportItems>
+                <Textbox Name="PMNo_CMMSPMSchedule">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=First(Fields!PMNo_CMMSPMSchedule.Value, "DataSet_Result")</Value>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>PMNo_CMMSPMSchedule</rd:DefaultName>
+                  <Top>0.12348cm</Top>
+                  <Left>3.64772cm</Left>
+                  <Height>0.49417cm</Height>
+                  <Width>4.26389cm</Width>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox5">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>WO No</Value>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox5</rd:DefaultName>
+                  <Top>0.16229cm</Top>
+                  <Left>0.16228cm</Left>
+                  <Height>0.42361cm</Height>
+                  <Width>2.83986cm</Width>
+                  <ZIndex>1</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox6">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>WO Date</Value>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox5</rd:DefaultName>
+                  <Top>0.95279cm</Top>
+                  <Left>0.16228cm</Left>
+                  <Height>0.42361cm</Height>
+                  <Width>2.80458cm</Width>
+                  <ZIndex>2</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
                 <Textbox Name="Textbox7">
                   <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
@@ -672,10 +771,11 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox5</rd:DefaultName>
-                  <Top>0.14546cm</Top>
-                  <Left>0.07056cm</Left>
+                  <Top>1.71506cm</Top>
+                  <Left>0.16228cm</Left>
                   <Height>0.50828cm</Height>
                   <Width>2.80458cm</Width>
+                  <ZIndex>3</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -706,11 +806,11 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>PMEquipmentNo_CMMSPMSchedule</rd:DefaultName>
-                  <Top>0.1061cm</Top>
-                  <Left>3.60186cm</Left>
+                  <Top>1.6757cm</Top>
+                  <Left>3.69358cm</Left>
                   <Height>0.49417cm</Height>
                   <Width>4.21803cm</Width>
-                  <ZIndex>1</ZIndex>
+                  <ZIndex>4</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -738,11 +838,11 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox5</rd:DefaultName>
-                  <Top>0.90068cm</Top>
-                  <Left>0.07056cm</Left>
+                  <Top>2.47028cm</Top>
+                  <Left>0.16228cm</Left>
                   <Height>0.51451cm</Height>
                   <Width>3.175cm</Width>
-                  <ZIndex>2</ZIndex>
+                  <ZIndex>5</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -773,11 +873,11 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>PMEquipDescription_CMMSPMSchedule</rd:DefaultName>
-                  <Top>0.92102cm</Top>
-                  <Left>3.5807cm</Left>
+                  <Top>2.49062cm</Top>
+                  <Left>3.67242cm</Left>
                   <Height>0.49417cm</Height>
                   <Width>4.23919cm</Width>
-                  <ZIndex>3</ZIndex>
+                  <ZIndex>6</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -805,11 +905,11 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox5</rd:DefaultName>
-                  <Top>1.7468cm</Top>
-                  <Left>0.07056cm</Left>
+                  <Top>3.3164cm</Top>
+                  <Left>0.16228cm</Left>
                   <Height>0.51451cm</Height>
                   <Width>1.41111cm</Width>
-                  <ZIndex>4</ZIndex>
+                  <ZIndex>7</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -840,11 +940,11 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>PlantCode_CMMSPMSchedule</rd:DefaultName>
-                  <Top>1.70771cm</Top>
-                  <Left>3.5807cm</Left>
+                  <Top>3.27731cm</Top>
+                  <Left>3.67242cm</Left>
                   <Height>0.49417cm</Height>
                   <Width>3.43486cm</Width>
-                  <ZIndex>5</ZIndex>
+                  <ZIndex>8</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -872,11 +972,11 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox5</rd:DefaultName>
-                  <Top>2.49062cm</Top>
-                  <Left>0.07056cm</Left>
+                  <Top>4.11313cm</Top>
+                  <Left>0.16228cm</Left>
                   <Height>0.51451cm</Height>
                   <Width>1.41111cm</Width>
-                  <ZIndex>6</ZIndex>
+                  <ZIndex>9</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -907,15 +1007,81 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>SectionCode_CMMSPMSchedule</rd:DefaultName>
-                  <Top>2.51096cm</Top>
-                  <Left>3.5807cm</Left>
+                  <Top>4.09576cm</Top>
+                  <Left>3.67947cm</Left>
                   <Height>0.49417cm</Height>
                   <Width>2.5cm</Width>
-                  <ZIndex>7</ZIndex>
+                  <ZIndex>10</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox11">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>Job Plan No</Value>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox5</rd:DefaultName>
+                  <Top>0.15403cm</Top>
+                  <Left>8.40141cm</Left>
+                  <Height>0.42361cm</Height>
+                  <Width>2.83986cm</Width>
+                  <ZIndex>11</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox12">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>Job Plan Description</Value>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox5</rd:DefaultName>
+                  <Top>0.91603cm</Top>
+                  <Left>8.41905cm</Left>
+                  <Height>0.42361cm</Height>
+                  <Width>2.80458cm</Width>
+                  <ZIndex>12</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Middle</VerticalAlign>
                     <PaddingLeft>2pt</PaddingLeft>
                     <PaddingRight>2pt</PaddingRight>
                     <PaddingTop>2pt</PaddingTop>
@@ -939,11 +1105,77 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox5</rd:DefaultName>
-                  <Top>0.14546cm</Top>
-                  <Left>8.35555cm</Left>
+                  <Top>1.69581cm</Top>
+                  <Left>8.41905cm</Left>
                   <Height>0.50828cm</Height>
                   <Width>3.05152cm</Width>
-                  <ZIndex>8</ZIndex>
+                  <ZIndex>13</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox15">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>Task Name</Value>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox5</rd:DefaultName>
+                  <Top>2.49062cm</Top>
+                  <Left>8.39611cm</Left>
+                  <Height>0.51451cm</Height>
+                  <Width>3.175cm</Width>
+                  <ZIndex>14</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <VerticalAlign>Middle</VerticalAlign>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+                <Textbox Name="Textbox17">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>WO ype</Value>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>Textbox5</rd:DefaultName>
+                  <Top>3.34708cm</Top>
+                  <Left>8.41728cm</Left>
+                  <Height>0.51451cm</Height>
+                  <Width>2.33419cm</Width>
+                  <ZIndex>15</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -972,11 +1204,11 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>Textbox5</rd:DefaultName>
-                  <Top>2.52698cm</Top>
-                  <Left>8.35378cm</Left>
+                  <Top>4.07733cm</Top>
+                  <Left>8.41728cm</Left>
                   <Height>0.51451cm</Height>
                   <Width>2.33419cm</Width>
-                  <ZIndex>9</ZIndex>
+                  <ZIndex>16</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -988,14 +1220,14 @@
                     <PaddingBottom>2pt</PaddingBottom>
                   </Style>
                 </Textbox>
-                <Textbox Name="Textbox5">
+                <Textbox Name="RLTaskName_CMMSPMSchedule">
                   <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>WO No</Value>
+                          <Value>=First(Fields!RLTaskName_CMMSPMSchedule.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontSize>8pt</FontSize>
                           </Style>
@@ -1004,33 +1236,161 @@
                       <Style />
                     </Paragraph>
                   </Paragraphs>
-                  <rd:DefaultName>Textbox5</rd:DefaultName>
-                  <Top>3.22985cm</Top>
-                  <Left>0.07056cm</Left>
-                  <Height>0.42361cm</Height>
-                  <Width>2.83986cm</Width>
-                  <ZIndex>10</ZIndex>
+                  <rd:DefaultName>RLTaskName_CMMSPMSchedule</rd:DefaultName>
+                  <Top>2.54353cm</Top>
+                  <Left>12.17084cm</Left>
+                  <Height>0.40464cm</Height>
+                  <Width>6.78625cm</Width>
+                  <ZIndex>17</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
                     <PaddingLeft>2pt</PaddingLeft>
                     <PaddingRight>2pt</PaddingRight>
                     <PaddingTop>2pt</PaddingTop>
                     <PaddingBottom>2pt</PaddingBottom>
                   </Style>
                 </Textbox>
-                <Textbox Name="PMNo_CMMSPMSchedule">
+                <Textbox Name="WorkOrderType_CMMSPMSchedule">
                   <CanGrow>true</CanGrow>
                   <KeepTogether>true</KeepTogether>
                   <Paragraphs>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!PMNo_CMMSPMSchedule.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!WorkOrderType_CMMSPMSchedule.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>WorkOrderType_CMMSPMSchedule</rd:DefaultName>
+                  <Top>3.27731cm</Top>
+                  <Left>12.16497cm</Left>
+                  <Height>0.49417cm</Height>
+                  <Width>2.02375cm</Width>
+                  <ZIndex>18</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+                <Textbox Name="UserID_CMMSPMSchedule">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=First(Fields!UserID_CMMSPMSchedule.Value, "DataSet_Result")</Value>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>UserID_CMMSPMSchedule</rd:DefaultName>
+                  <Top>4.09576cm</Top>
+                  <Left>12.17436cm</Left>
+                  <Height>0.46773cm</Height>
+                  <Width>4.47556cm</Width>
+                  <ZIndex>19</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+                <Textbox Name="RLJPNo_CMMSPMSchedule">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=First(Fields!RLJPNo_CMMSPMSchedule.Value, "DataSet_Result")</Value>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>RLJPNo_CMMSPMSchedule</rd:DefaultName>
+                  <Top>0.1905cm</Top>
+                  <Left>12.17789cm</Left>
+                  <Height>0.42714cm</Height>
+                  <Width>3.50189cm</Width>
+                  <ZIndex>20</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+                <Textbox Name="RLJPName_CMMSPMSchedule">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=First(Fields!RLJPName_CMMSPMSchedule.Value, "DataSet_Result")</Value>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                          </Style>
+                        </TextRun>
+                      </TextRuns>
+                      <Style />
+                    </Paragraph>
+                  </Paragraphs>
+                  <rd:DefaultName>RLJPName_CMMSPMSchedule</rd:DefaultName>
+                  <Top>0.91722cm</Top>
+                  <Left>12.16025cm</Left>
+                  <Height>0.49636cm</Height>
+                  <Width>6.79683cm</Width>
+                  <ZIndex>21</ZIndex>
+                  <Style>
+                    <Border>
+                      <Style>None</Style>
+                    </Border>
+                    <PaddingLeft>2pt</PaddingLeft>
+                    <PaddingRight>2pt</PaddingRight>
+                    <PaddingTop>2pt</PaddingTop>
+                    <PaddingBottom>2pt</PaddingBottom>
+                  </Style>
+                </Textbox>
+                <Textbox Name="WorkOrderStartDate_CMMSPMSchedule">
+                  <CanGrow>true</CanGrow>
+                  <KeepTogether>true</KeepTogether>
+                  <Paragraphs>
+                    <Paragraph>
+                      <TextRuns>
+                        <TextRun>
+                          <Value>=First(Fields!WorkOrderStartDate_CMMSPMSchedule.Value, "DataSet_Result")</Value>
+                          <Style>
+                            <FontSize>8pt</FontSize>
+                            <Format>d</Format>
                           </Style>
                         </TextRun>
                       </TextRuns>
@@ -1039,49 +1399,16 @@
                       </Style>
                     </Paragraph>
                   </Paragraphs>
-                  <rd:DefaultName>PMNo_CMMSPMSchedule</rd:DefaultName>
-                  <Top>3.19104cm</Top>
-                  <Left>3.556cm</Left>
-                  <Height>0.49417cm</Height>
-                  <Width>4.26389cm</Width>
-                  <ZIndex>11</ZIndex>
+                  <rd:DefaultName>WorkOrderStartDate_CMMSPMSchedule</rd:DefaultName>
+                  <Top>1.71098cm</Top>
+                  <Left>12.22728cm</Left>
+                  <Height>0.6cm</Height>
+                  <Width>2.5cm</Width>
+                  <ZIndex>22</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
                     </Border>
-                    <PaddingLeft>2pt</PaddingLeft>
-                    <PaddingRight>2pt</PaddingRight>
-                    <PaddingTop>2pt</PaddingTop>
-                    <PaddingBottom>2pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox6">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>WO Date</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox5</rd:DefaultName>
-                  <Top>3.99184cm</Top>
-                  <Left>0.07056cm</Left>
-                  <Height>0.42361cm</Height>
-                  <Width>2.80458cm</Width>
-                  <ZIndex>12</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
                     <PaddingLeft>2pt</PaddingLeft>
                     <PaddingRight>2pt</PaddingRight>
                     <PaddingTop>2pt</PaddingTop>
@@ -1108,145 +1435,11 @@
                     </Paragraph>
                   </Paragraphs>
                   <rd:DefaultName>WorkOrderDate_CMMSPMSchedule</rd:DefaultName>
-                  <Top>3.8616cm</Top>
-                  <Left>3.5807cm</Left>
+                  <Top>0.92428cm</Top>
+                  <Left>3.72886cm</Left>
                   <Height>0.6cm</Height>
                   <Width>2.5cm</Width>
-                  <ZIndex>13</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>2pt</PaddingLeft>
-                    <PaddingRight>2pt</PaddingRight>
-                    <PaddingTop>2pt</PaddingTop>
-                    <PaddingBottom>2pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox15">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>HOD Approval Status</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox5</rd:DefaultName>
-                  <Top>0.94027cm</Top>
-                  <Left>8.35555cm</Left>
-                  <Height>0.50828cm</Height>
-                  <Width>3.05152cm</Width>
-                  <ZIndex>14</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                    <PaddingLeft>2pt</PaddingLeft>
-                    <PaddingRight>2pt</PaddingRight>
-                    <PaddingTop>2pt</PaddingTop>
-                    <PaddingBottom>2pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox36">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>STORE Approval Status</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <TextDecoration>None</TextDecoration>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox28</rd:DefaultName>
-                  <Top>1.737cm</Top>
-                  <Left>8.35555cm</Left>
-                  <Height>0.50588cm</Height>
-                  <Width>3.43958cm</Width>
-                  <ZIndex>15</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <PaddingLeft>2pt</PaddingLeft>
-                    <PaddingRight>2pt</PaddingRight>
-                    <PaddingTop>2pt</PaddingTop>
-                    <PaddingBottom>2pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="Textbox17">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>Work Order Completion Date</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style />
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>Textbox5</rd:DefaultName>
-                  <Top>3.1826cm</Top>
-                  <Left>8.35555cm</Left>
-                  <Height>0.63335cm</Height>
-                  <Width>3.91583cm</Width>
-                  <ZIndex>16</ZIndex>
-                  <Style>
-                    <Border>
-                      <Style>None</Style>
-                    </Border>
-                    <VerticalAlign>Middle</VerticalAlign>
-                    <PaddingLeft>2pt</PaddingLeft>
-                    <PaddingRight>2pt</PaddingRight>
-                    <PaddingTop>2pt</PaddingTop>
-                    <PaddingBottom>2pt</PaddingBottom>
-                  </Style>
-                </Textbox>
-                <Textbox Name="WorkOrderCompletionDate_CMMSPMSchedule">
-                  <CanGrow>true</CanGrow>
-                  <KeepTogether>true</KeepTogether>
-                  <Paragraphs>
-                    <Paragraph>
-                      <TextRuns>
-                        <TextRun>
-                          <Value>=First(Fields!WorkOrderCompletionDate_CMMSPMSchedule.Value, "DataSet_Result")</Value>
-                          <Style>
-                            <FontSize>8pt</FontSize>
-                            <Format>d</Format>
-                          </Style>
-                        </TextRun>
-                      </TextRuns>
-                      <Style>
-                        <TextAlign>Left</TextAlign>
-                      </Style>
-                    </Paragraph>
-                  </Paragraphs>
-                  <rd:DefaultName>WorkOrderCompletionDate_CMMSPMSchedule</rd:DefaultName>
-                  <Top>3.22985cm</Top>
-                  <Left>12.95552cm</Left>
-                  <Height>0.6cm</Height>
-                  <Width>2.84925cm</Width>
-                  <ZIndex>17</ZIndex>
+                  <ZIndex>23</ZIndex>
                   <Style>
                     <Border>
                       <Style>None</Style>
@@ -1261,7 +1454,7 @@
               <KeepTogether>true</KeepTogether>
               <Top>1.27564cm</Top>
               <Left>0.34078cm</Left>
-              <Height>4.72558cm</Height>
+              <Height>4.64815cm</Height>
               <Width>19.26167cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
@@ -1297,7 +1490,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Remarks For Work Order Description</Value>
+                      <Value>Remarks For Work Order Description &amp; Observation &amp; Actions</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -1309,10 +1502,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox28</rd:DefaultName>
-              <Top>6.51439cm</Top>
+              <Top>6.19689cm</Top>
               <Left>0.53834cm</Left>
               <Height>0.50588cm</Height>
-              <Width>5.18759cm</Width>
+              <Width>8.5919cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -1341,7 +1534,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Remarks1_CMMSPMSchedule</rd:DefaultName>
-              <Top>7.24112cm</Top>
+              <Top>6.92362cm</Top>
               <Left>0.59478cm</Left>
               <Height>1.19972cm</Height>
               <Width>18.94417cm</Width>
@@ -1373,7 +1566,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Remarks2_CMMSPMSchedule</rd:DefaultName>
-              <Top>9.30487cm</Top>
+              <Top>8.32062cm</Top>
               <Left>0.60889cm</Left>
               <Height>1.19972cm</Height>
               <Width>18.89831cm</Width>
@@ -1407,8 +1600,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox28</rd:DefaultName>
-              <Top>14.72247cm</Top>
-              <Left>0.34078cm</Left>
+              <Top>13.34664cm</Top>
+              <Left>0.64117cm</Left>
               <Height>0.50588cm</Height>
               <Width>3.03689cm</Width>
               <ZIndex>5</ZIndex>
@@ -1441,8 +1634,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox28</rd:DefaultName>
-              <Top>10.79024cm</Top>
-              <Left>0.35454cm</Left>
+              <Top>9.71427cm</Top>
+              <Left>0.57768cm</Left>
               <Height>0.50588cm</Height>
               <Width>3.10039cm</Width>
               <ZIndex>6</ZIndex>
@@ -1999,7 +2192,7 @@
                 </Textbox>
               </ReportItems>
               <KeepTogether>true</KeepTogether>
-              <Top>11.66466cm</Top>
+              <Top>10.40098cm</Top>
               <Left>0.35454cm</Left>
               <Height>2.64008cm</Height>
               <Width>19.26167cm</Width>
@@ -2059,18 +2252,30 @@
                 </RightBorder>
               </Style>
             </Line>
-            <Textbox Name="Textbox37">
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageHeader>
+        <PageFooter>
+          <Height>1.99915cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox34">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Remarks For Observation &amp; Actions</Value>
+                      <Value>Work Order Completion Date</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
                         <FontWeight>Bold</FontWeight>
-                        <TextDecoration>Underline</TextDecoration>
+                        <TextDecoration>None</TextDecoration>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2078,11 +2283,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox28</rd:DefaultName>
-              <Top>8.62613cm</Top>
-              <Left>0.51682cm</Left>
+              <Top>0.39864cm</Top>
+              <Left>0.34078cm</Left>
               <Height>0.50588cm</Height>
-              <Width>5.20911cm</Width>
-              <ZIndex>9</ZIndex>
+              <Width>4.20391cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2093,31 +2297,30 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="WorkOrderStartDate_CMMSPMSchedule">
+            <Textbox Name="Textbox35">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!WorkOrderStartDate_CMMSPMSchedule.Value, "DataSet_Result")</Value>
+                      <Value>HOD Approval Status</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
-                        <Format>d</Format>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>None</TextDecoration>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style>
-                    <TextAlign>Left</TextAlign>
-                  </Style>
+                  <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>WorkOrderStartDate_CMMSPMSchedule</rd:DefaultName>
-              <Top>1.38174cm</Top>
-              <Left>13.2963cm</Left>
-              <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
-              <ZIndex>10</ZIndex>
+              <rd:DefaultName>Textbox28</rd:DefaultName>
+              <Top>0.39864cm</Top>
+              <Left>8.05251cm</Left>
+              <Height>0.50588cm</Height>
+              <Width>3.8335cm</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2128,7 +2331,53 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="HODApprovalStatus_CMMSPMSchedule1">
+            <Textbox Name="Textbox36">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>STORE Approval Status</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                        <TextDecoration>None</TextDecoration>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox28</rd:DefaultName>
+              <Top>0.39864cm</Top>
+              <Left>14.77846cm</Left>
+              <Height>0.50588cm</Height>
+              <Width>3.8335cm</Width>
+              <ZIndex>2</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Line Name="Line22">
+              <Top>1.13457cm</Top>
+              <Left>0.32314cm</Left>
+              <Height>0cm</Height>
+              <Width>19.70144cm</Width>
+              <ZIndex>3</ZIndex>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+              </Style>
+            </Line>
+            <Textbox Name="HODApprovalStatus_CMMSPMSchedule">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -2142,20 +2391,21 @@
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Left</TextAlign>
+                    <TextAlign>Center</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>HODApprovalStatus_CMMSPMSchedule1</rd:DefaultName>
-              <Top>2.18172cm</Top>
-              <Left>13.2963cm</Left>
+              <rd:DefaultName>HODApprovalStatus_CMMSPMSchedule</rd:DefaultName>
+              <Top>1.29332cm</Top>
+              <Left>8.25712cm</Left>
               <Height>0.6cm</Height>
-              <Width>4.42264cm</Width>
-              <ZIndex>11</ZIndex>
+              <Width>3.65478cm</Width>
+              <ZIndex>4</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
                 </Border>
+                <VerticalAlign>Middle</VerticalAlign>
                 <PaddingLeft>2pt</PaddingLeft>
                 <PaddingRight>2pt</PaddingRight>
                 <PaddingTop>2pt</PaddingTop>
@@ -2176,16 +2426,16 @@
                     </TextRun>
                   </TextRuns>
                   <Style>
-                    <TextAlign>Left</TextAlign>
+                    <TextAlign>Center</TextAlign>
                   </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>StoreApprovalStatus_CMMSPMSchedule</rd:DefaultName>
-              <Top>2.95811cm</Top>
-              <Left>13.2963cm</Left>
+              <Top>1.27215cm</Top>
+              <Left>14.98106cm</Left>
               <Height>0.6cm</Height>
               <Width>3.6309cm</Width>
-              <ZIndex>12</ZIndex>
+              <ZIndex>5</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2197,28 +2447,31 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="UserID_CMMSPMSchedule">
+            <Textbox Name="WorkOrderCompletionDate_CMMSPMSchedule">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!UserID_CMMSPMSchedule.Value, "DataSet_Result")</Value>
+                      <Value>=First(Fields!WorkOrderCompletionDate_CMMSPMSchedule.Value, "DataSet_Result")</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
+                        <Format>d</Format>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>UserID_CMMSPMSchedule</rd:DefaultName>
-              <Top>3.76652cm</Top>
-              <Left>13.31394cm</Left>
-              <Height>0.46773cm</Height>
-              <Width>4.47556cm</Width>
-              <ZIndex>13</ZIndex>
+              <rd:DefaultName>WorkOrderCompletionDate_CMMSPMSchedule</rd:DefaultName>
+              <Top>1.29332cm</Top>
+              <Left>0.32314cm</Left>
+              <Height>0.6cm</Height>
+              <Width>2.5cm</Width>
+              <ZIndex>6</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2229,29 +2482,6 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-          </ReportItems>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </PageHeader>
-        <PageFooter>
-          <Height>1.99915cm</Height>
-          <PrintOnFirstPage>true</PrintOnFirstPage>
-          <PrintOnLastPage>true</PrintOnLastPage>
-          <ReportItems>
-            <Line Name="Line22">
-              <Top>1.13457cm</Top>
-              <Left>0.32314cm</Left>
-              <Height>0cm</Height>
-              <Width>19.70144cm</Width>
-              <Style>
-                <Border>
-                  <Style>Solid</Style>
-                </Border>
-              </Style>
-            </Line>
           </ReportItems>
           <Style>
             <Border>

@@ -304,6 +304,24 @@ page 50142 "CM Work Order Card"
                 Visible = false;
             }
 
+            // Modified by Patric on 12-Dec-2023
+            group("Posting Setup")
+            {
+                field("GL Account Code"; Rec."GL Account Code")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the GL Account Code field.';
+                    Caption = 'G/L Account';  // Debit Side Account
+                }
+                field("Bal. GL Account"; Rec."Bal. GL Account")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the Bal. G/L Account field.';
+                    Caption = 'Bal. G/L Account';  // Credit Side Account
+                }
+            }
+
+            //************** ***************
         }
     }
 
@@ -409,6 +427,14 @@ page 50142 "CM Work Order Card"
                             PMMainList.Modify();
                         End;
                         Message('Work Order has been Posted & Closed..');
+
+                        //TECSA Change Request on 19-Feb-2024
+
+                        //    if CMMSPMSch.Get(Rec."PM No.") then Begin
+                        JnlCreateCMWorkOrder.CreateCMWordOrderJournal(Rec);
+                        Message('Journal Created Successfully!!!!!');
+
+                        // ********** *************
                     end;
                 }
             }
@@ -484,5 +510,6 @@ page 50142 "CM Work Order Card"
         PMMainList: Record "PM Main List";
         IsEditable: Boolean;
         CMMSPMSch: Record "CMMS PM Schedule";
+        JnlCreateCMWorkOrder: Codeunit "CM Transfer Journal Line";
 
 }

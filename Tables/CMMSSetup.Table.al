@@ -46,6 +46,18 @@ table 59019 "CMMS Setup2"
             DataClassification = ToBeClassified;
             TableRelation = "No. Series";
         }
+        field(11; "WO Gen. Jnl Template"; Code[20])
+        {
+            Caption = 'WO Gen. Jnl Template';
+            DataClassification = CustomerContent;
+            TableRelation = "Gen. Journal Template";
+        }
+        field(12; "WO Gen. Jnl Batch"; Code[20])
+        {
+            DataClassification = ToBeClassified;
+            Caption = 'WO Gen. Jnl Batch';
+            TableRelation = "Gen. Journal Batch".Name where("Journal Template Name" = field("WO Gen. Jnl Template"));
+        }
 
     }
 

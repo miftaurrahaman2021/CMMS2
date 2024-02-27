@@ -115,6 +115,17 @@ table 59010 "CMMS PM Schedule"
             DataClassification = ToBeClassified;
             Caption = 'Posting Group';
             TableRelation = "Job Posting Group";  //TECSA Change Request on 19-Dec-2023
+            trigger OnValidate()
+            var
+                JobGLPostRec: Record "Job Posting Group";
+            Begin
+                JobGLPostRec.Reset();
+                JobGLPostRec.SetRange(Code, Rec."Posting Group");
+                If JobGLPostRec.FindFirst() then Begin
+                    "GL Account Code" := JobGLPostRec."G/L Costs Applied Account";
+                    "Bal. GL Account" := JobGLPostRec."Item Costs Applied Account";
+                End;
+            End;
         }
         field(24; "Remarks 1"; Text[500])
         {
@@ -127,6 +138,24 @@ table 59010 "CMMS PM Schedule"
             DataClassification = ToBeClassified;
             Caption = 'Observation & Action';
         }
+
+        // Modified by Patric on 12-Dec-2023
+        field(26; "GL Account Code"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'GL Account Code';
+            Editable = false;
+        }
+        field(27; "Bal. GL Account"; Code[20])
+        {
+            DataClassification = CustomerContent;
+            Caption = 'Bal. G/L Account';
+            Editable = false;
+        }
+
+        //***************** *********************
+
+
 
 
         // Route Line Information 

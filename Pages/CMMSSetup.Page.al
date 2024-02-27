@@ -46,6 +46,21 @@ page 59021 "CMMS Setup"
                     ToolTip = 'Specifies the value of the Work Order Nos. field.';
                 }
             }
+
+            group("Posting")
+            {
+
+                field("WO Gen. Jnl Template"; Rec."WO Gen. Jnl Template")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the WO Gen. Jnl Template field.';
+                }
+                field("WO Gen. Jnl Batch"; Rec."WO Gen. Jnl Batch")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Specifies the value of the WO Gen. Jnl Batch field.';
+                }
+            }
         }
     }
 
